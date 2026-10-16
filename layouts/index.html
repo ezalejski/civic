@@ -1,0 +1,22 @@
+{{ define "main" }}
+{{ $budowa := .Site.GetPage "section" "civic" }}
+{{ $pages := $budowa.Pages.ByWeight }}
+<div class="chapters">
+  {{ range $pages }}
+    <a class="chapter-card" href="{{ .RelPermalink }}">
+      {{ $coverRes := .Resources.GetMatch (.Params.cover) }}
+      {{ if $coverRes }}
+        {{ $thumb := $coverRes.Fill "360x240 webp q75" }}
+        <img class="chapter-thumb" src="{{ $thumb.RelPermalink }}" loading="lazy" alt="">
+      {{ end }}
+      <div class="chapter-body">
+        <h2>{{ .Title }}</h2>
+        <p class="chapter-intro">{{ .Plain | truncate 180 }}</p>
+        {{ $photos := len (.Resources.ByType "image") }}
+        {{ $videos := len (.Resources.ByType "video") }}
+        <span class="photo-count">{{ $photos }} {{ if and (eq (mod $photos 10) 1) (ne (mod $photos 100) 11) }}zdjęcie{{ else if and (ge (mod $photos 10) 2) (le (mod $photos 10) 4) (not (and (ge (mod $photos 100) 12) (le (mod $photos 100) 14))) }}zdjęcia{{ else }}zdjęć{{ end }}{{ if gt $videos 0 }} · {{ $videos }} wideo{{ end }}</span>
+      </div>
+    </a>
+  {{ end }}
+</div>
+{{ end }}

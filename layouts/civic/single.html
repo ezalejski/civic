@@ -1,0 +1,31 @@
+{{ define "main" }}
+<article class="entry">
+  <a class="back-link" href="{{ "/" | relURL }}">&larr; wszystkie rozdziały</a>
+  <h1>{{ .Title }}</h1>
+  <div class="entry-content">
+    {{ .Content }}
+  </div>
+
+  {{ $images := .Resources.ByType "image" }}
+  {{ if $images }}
+  <div class="gallery">
+    {{ range $images }}
+      {{ $thumb := .Resize "700x webp q80" }}
+      <a href="{{ .RelPermalink }}" target="_blank" rel="noopener" class="gallery-item">
+        <img src="{{ $thumb.RelPermalink }}" loading="lazy" alt="">
+      </a>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{ $videos := .Resources.ByType "video" }}
+  {{ if $videos }}
+  <div class="video-list">
+    {{ range $videos }}
+      <video controls preload="metadata" src="{{ .RelPermalink }}"></video>
+    {{ end }}
+  </div>
+  {{ end }}
+  <a class="back-link back-link-bottom" href="{{ "/" | relURL }}">&larr; wszystkie rozdziały</a>
+</article>
+{{ end }}

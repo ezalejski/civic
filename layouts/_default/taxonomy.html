@@ -1,0 +1,14 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{ with .Content }}{{ . }}{{ end }}
+{{ if .Pages }}
+<ul>
+  {{ range .Pages }}
+  <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> ({{ len .Pages }})</li>
+  {{ end }}
+</ul>
+{{ else }}
+<p>Brak wpisów.</p>
+{{ end }}
+<p><a href="{{ "/" | relURL }}">Wróć do osi czasu</a></p>
+{{ end }}
