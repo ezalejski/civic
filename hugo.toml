@@ -1,0 +1,15 @@
+baseURL = "https://example.com/"
+locale = "pl-pl"
+title = "Honda Civic EJ9 (1997) — Żaba"
+theme = ""
+
+[params]
+  subtitle = ""
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[imaging]
+  resampleFilter = "Lanczos"
+  quality = 85
+  anchor = "smart"

@@ -1,0 +1,20 @@
+{{ define "main" }}
+{{ $budowa := .Site.GetPage "section" "budowa" }}
+{{ $pages := $budowa.Pages.ByWeight }}
+<div class="chapters">
+  {{ range $pages }}
+    <a class="chapter-card" href="{{ .RelPermalink }}">
+      {{ $coverRes := .Resources.GetMatch (.Params.cover) }}
+      {{ if $coverRes }}
+        {{ $thumb := $coverRes.Fill "360x240 webp q75" }}
+        <img class="chapter-thumb" src="{{ $thumb.RelPermalink }}" loading="lazy" alt="">
+      {{ end }}
+      <div class="chapter-body">
+        <h2>{{ .Title }}</h2>
+        <p class="chapter-intro">{{ .Plain | truncate 180 }}</p>
+        <span class="photo-count">{{ len (.Resources.ByType "image") }} zdjęć{{ if gt (len (.Resources.ByType "video")) 0 }} · {{ len (.Resources.ByType "video") }} wideo{{ end }}</span>
+      </div>
+    </a>
+  {{ end }}
+</div>
+{{ end }}
