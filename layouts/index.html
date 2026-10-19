@@ -1,5 +1,5 @@
 {{ define "main" }}
-{{ $budowa := .Site.GetPage "section" "budowa" }}
+{{ $budowa := .Site.GetPage "section" "civic" }}
 {{ $pages := $budowa.Pages.ByWeight }}
 <div class="chapters">
   {{ range $pages }}

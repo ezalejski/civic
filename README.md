@@ -21,7 +21,7 @@ Open http://localhost:1313/. The server watches `content/` and `layouts/` and re
 ## Site structure
 
 ```
-content/budowa/<chapter-slug>/
+content/civic/<chapter-slug>/
   index.md        # chapter text + front matter
   photo1.jpg       # any number of images/videos — all become part of the gallery
   photo2.jpg
@@ -47,13 +47,13 @@ Chapter description goes here, in Markdown.
 Drop the files straight into that chapter's folder, e.g.:
 
 ```bash
-cp ~/Downloads/IMG_1234.jpg content/budowa/silnik/
+cp ~/Downloads/IMG_1234.jpg content/civic/silnik/
 ```
 
 That's it — no config, no front matter changes needed. Supported: `.jpg`, `.jpeg`, `.webp`, `.mp4`, `.mov`. **HEIC is not supported** — convert first:
 
 ```bash
-sips -s format jpeg -Z 2400 IMG_1234.HEIC --out content/budowa/silnik/IMG_1234.jpg
+sips -s format jpeg -Z 2400 IMG_1234.HEIC --out content/civic/silnik/IMG_1234.jpg
 ```
 
 ### Fix sideways/upside-down photos
@@ -61,7 +61,7 @@ sips -s format jpeg -Z 2400 IMG_1234.HEIC --out content/budowa/silnik/IMG_1234.j
 Some phone photos carry an EXIF orientation flag that Hugo's image resizer doesn't always respect. If a new photo looks rotated on the site, bake the rotation into the pixels once, in place:
 
 ```bash
-mogrify -auto-orient content/budowa/silnik/IMG_1234.jpg
+mogrify -auto-orient content/civic/silnik/IMG_1234.jpg
 ```
 
 Safe to run on a whole chapter folder or the entire tree — it's a no-op for images that are already upright.
@@ -69,10 +69,10 @@ Safe to run on a whole chapter folder or the entire tree — it's a no-op for im
 ### Add a new chapter
 
 ```bash
-mkdir content/budowa/nowy-rozdzial
+mkdir content/civic/nowy-rozdzial
 ```
 
-Create `content/budowa/nowy-rozdzial/index.md` with front matter (see above — pick a `weight` between the two chapters you want it to sit between), then copy in the photos.
+Create `content/civic/nowy-rozdzial/index.md` with front matter (see above — pick a `weight` between the two chapters you want it to sit between), then copy in the photos.
 
 ### Reorder chapters
 
@@ -80,7 +80,7 @@ Edit the `weight:` value in each chapter's `index.md`. Leave gaps (10, 20, 30…
 
 ### Change a chapter's title, text, or cover photo
 
-Edit `content/budowa/<chapter>/index.md` directly — `title`, `cover`, and the Markdown body below the `---` fence.
+Edit `content/civic/<chapter>/index.md` directly — `title`, `cover`, and the Markdown body below the `---` fence.
 
 ### Site title / tagline
 
