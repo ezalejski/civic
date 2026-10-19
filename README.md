@@ -1,5 +1,7 @@
 # Honda Civic EJ9 (1997) — build log
 
+A photo journal of the full self-restoration of a 1997 Honda Civic EJ9, nicknamed *Żaba* (Polish for "frog") — from bare shell to finished car. The site lives at <https://civic.zalejski.pl> and is written in Polish.
+
 Static site built with [Hugo](https://gohugo.io/), organized as a set of thematic chapters (bodywork, paint, engine, etc.) rather than a chronological blog — most source photos have no reliable capture date, so grouping by topic reads more naturally.
 
 ## Prerequisites
