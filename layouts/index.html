@@ -12,7 +12,9 @@
       <div class="chapter-body">
         <h2>{{ .Title }}</h2>
         <p class="chapter-intro">{{ .Plain | truncate 180 }}</p>
-        <span class="photo-count">{{ len (.Resources.ByType "image") }} zdjęć{{ if gt (len (.Resources.ByType "video")) 0 }} · {{ len (.Resources.ByType "video") }} wideo{{ end }}</span>
+        {{ $photos := len (.Resources.ByType "image") }}
+        {{ $videos := len (.Resources.ByType "video") }}
+        <span class="photo-count">{{ $photos }} {{ if and (eq (mod $photos 10) 1) (ne (mod $photos 100) 11) }}zdjęcie{{ else if and (ge (mod $photos 10) 2) (le (mod $photos 10) 4) (not (and (ge (mod $photos 100) 12) (le (mod $photos 100) 14))) }}zdjęcia{{ else }}zdjęć{{ end }}{{ if gt $videos 0 }} · {{ $videos }} wideo{{ end }}</span>
       </div>
     </a>
   {{ end }}

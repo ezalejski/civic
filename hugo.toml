@@ -1,7 +1,5 @@
-baseURL = "https://example.com/"
-locale = "pl-pl"
+baseURL = "https://civic.zalejski.pl/"
 title = "Honda Civic EJ9 (1997) — Żaba"
-theme = ""
 
 [params]
   subtitle = ""
