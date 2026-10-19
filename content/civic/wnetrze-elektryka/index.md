@@ -1,7 +1,7 @@
 ---
 title: "Wnętrze i elektryka"
 weight: 30
-cover: "0IMG_7532.jpg"
+cover: "0IMG_7532.webp"
 ---
 
 Wykończenie wnętrza, oraz elektryka.

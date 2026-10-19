@@ -1,7 +1,7 @@
 ---
 title: "Silnik B16A2"
 weight: 20
-cover: "IMG_0507.jpeg"
+cover: "IMG_0507.webp"
 ---
 
 Silnik B16A2 po obróbce, montaż w komorze, detale oraz pomiar mocy na hamowni.

@@ -1,7 +1,7 @@
 ---
 title: "Zawieszenie, hamulce, felgi, wydech"
 weight: 40
-cover: "00IMG_7431.jpg"
+cover: "00IMG_7431.webp"
 ---
 
 Montaż i renowacja zawieszenia, układ hamulcowego, wydechu, felg oraz geometria kół.
