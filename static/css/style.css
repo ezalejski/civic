@@ -229,6 +229,15 @@ main {
   font-size: .85rem;
 }
 
+.not-found {
+  text-align: center;
+  padding: 3rem 0;
+}
+.not-found h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
 .site-footer {
   text-align: center;
   color: var(--muted);
